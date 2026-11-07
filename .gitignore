@@ -1,0 +1,14 @@
+# Environments
+venv/
+__pycache__/
+*.pyc
+
+# Data (Never commit large datasets)
+backend/data/*.csv
+backend/data/*.parquet
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
