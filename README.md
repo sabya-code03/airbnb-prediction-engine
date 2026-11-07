@@ -5,8 +5,8 @@ An end-to-end Machine Learning web application that predicts the optimal nightly
 This project features a fully optimized Random Forest regression model served via a FastAPI REST API, connected to a responsive, dark-themed Next.js dashboard.
 
 ## 🚀 Live Demo
-* **Frontend UI (Vercel):** [Insert your Vercel URL here, e.g., https://airbnb-prediction-engine.vercel.app]
-* **Backend API Docs (Render):** [Insert your Render URL here, e.g., https://airbnb-prediction-engine.onrender.com/docs]
+* **Frontend UI (Vercel):**  https://airbnb-prediction-engine.vercel.app
+* **Backend API Docs (Render):** https://airbnb-prediction-engine.onrender.com/docs
 
 ## 🛠️ Tech Stack
 * **Frontend:** Next.js, React, TypeScript, Tailwind CSS
