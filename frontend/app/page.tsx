@@ -64,7 +64,7 @@ export default function Home() {
         review_scores_value: Number(formData.review_scores_value),
       };
 
-      const response = await fetch("https://airbnb-prediction-engine.onrender.com/predictt", {
+      const response = await fetch("https://airbnb-prediction-engine.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
