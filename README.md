@@ -6,8 +6,8 @@ This project features a fully optimized Random Forest regression model served vi
 
 ## 🚀 Live Demo
 
-* **Frontend UI (Vercel):** [Insert your Vercel URL here]
-* **Backend API Docs (Render):** [Insert your Render URL here]
+* **Frontend UI (Vercel):** [(https://airbnb-prediction-engine.vercel.app/)]
+* **Backend API Docs (Render):** [(https://airbnb-prediction-engine.onrender.com/predict)]
 
 ## 📊 Dataset & Attribution
 
