@@ -9,10 +9,10 @@ export default function Home() {
     minimum_nights: 1,
     maximum_nights: 365,
     room_type: "Entire home/apt",
-    city: "New York",
+    city: "Paris",
     // Location
-    latitude: 40.730610,
-    longitude: -73.935242,
+   latitude: 40.7128,
+    longitude: -74.0060,
     // Host Details
     host_is_superhost: "t",
     host_has_profile_pic: "t",
@@ -51,8 +51,8 @@ export default function Home() {
         minimum_nights: Number(formData.minimum_nights),
         maximum_nights: Number(formData.maximum_nights),
         host_total_listings_count: Number(formData.host_total_listings_count),
-        host_response_rate: Number(formData.host_response_rate),
-        host_acceptance_rate: Number(formData.host_acceptance_rate),
+        host_response_rate: Number(formData.host_response_rate)/100,
+        host_acceptance_rate: Number(formData.host_acceptance_rate)/100,
         latitude: Number(formData.latitude),
         longitude: Number(formData.longitude),
         review_scores_rating: Number(formData.review_scores_rating),
@@ -64,16 +64,16 @@ export default function Home() {
         review_scores_value: Number(formData.review_scores_value),
       };
 
-      const response = await fetch("https://airbnb-prediction-engine.onrender.com/predict", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL as string,{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(JSON.stringify(errData.detail));
-      }
+    setError("Unable to connect to the prediction engine. Please try again.");
+    return;
+    }
 
       const data = await response.json();
       setPrediction(data.predicted_price);
@@ -167,7 +167,7 @@ export default function Home() {
 
           <button type="submit" disabled={loading} 
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-4 px-4 rounded-lg transition-colors shadow-lg disabled:opacity-50 mt-4">
-            {loading ? "Calculating Variance..." : "Predict Optimal Price"}
+            {loading ? "Predicting..." : "Predict Optimal Price"}
           </button>
         </form>
 

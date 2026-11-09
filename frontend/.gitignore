@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore raw data and heavy ML artifacts
+backend/data/*.csv
+backend/processed.csv
+raw.csv
+*.joblib
+!backend/models/best_model.joblib
